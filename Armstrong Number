@@ -1,0 +1,36 @@
+import java.util.*;
+class ArmstrongNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int sum = 0, rem =0, count=0;
+        int temp= a;
+        while(a!=0){
+            rem = a%10;
+            count++;
+            a=a/10;
+        }
+        System.out.println("Count of Digits: "+count);
+        int temp2=temp;
+        while(temp!=0){
+            rem= temp%10;
+            int pof = powerOf(rem,count);
+            sum = sum+pof;
+            temp=temp/10;
+        }
+        if(temp2==sum){
+            System.out.println(temp2+" is an Armstrong Number");
+        }
+        else{
+            System.out.println(temp2+" is not an Armstrong Number");
+        }
+    }
+    public static int powerOf(int rem, int count){
+        int result=1;
+        while(count!=0){
+            result = result* rem;
+            --count;
+        }
+        return result;
+    }
+}
