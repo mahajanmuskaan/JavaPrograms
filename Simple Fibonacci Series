@@ -1,0 +1,16 @@
+import java.util.*;
+class FibonacciSeries{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a =0, b=1,c;
+        int n = sc.nextInt();
+        System.out.println(a);
+        System.out.println(b);
+        for(int i=0;i<n;i++){
+            c = a+b;
+            System.out.print(c+"\n");
+            a=b;
+            b=c;
+        }
+    }
+}
