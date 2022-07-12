@@ -1,0 +1,9 @@
+import java.util.*;
+class Strings1 {
+    public static void main(String[] args) {
+        String str = new String();
+        Scanner sc = new Scanner(System.in);
+        str = sc.nextLine();    // Taking user input of String type
+        System.out.println(str); // Printing String
+    }
+}
