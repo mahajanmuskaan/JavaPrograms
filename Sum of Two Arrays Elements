@@ -1,0 +1,30 @@
+import java.util.*;
+public class SumOfTwoArraysElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =  sc.nextInt();
+        int arr1[] = new int[size];
+        int arr2[] = new int[size];
+        int arr3[] = new int[size];
+        System.out.println("Add elements in Array1 : ");
+        for(int i =0;i<size;i++){
+            arr1[i] = sc.nextInt();
+        }
+        
+        System.out.println("Add elements in Array2 : ");
+        for(int i =0;i<size;i++){
+            arr2[i] = sc.nextInt();
+        }
+        
+        System.out.println("Elements of Array are: ");
+        for(int j = 0;j<size;j++){
+            arr3[j] = arr1[j] + arr2[j];
+        }
+        
+        System.out.println("Sum of Elements of Array1 and Array2 are: ");
+        for(int k =0;k<size;k++){
+            System.out.println(arr3[k]);
+        }
+        
+    }
+}
