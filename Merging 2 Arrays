@@ -31,7 +31,7 @@ public class MergingTwoArraysElements {
         
         // Using Loop-- Adding array2 elements in array3
         for(int j=arr1.length;j<arr3.length;j++){
-            arr3[j] = arr2[j-5];
+            arr3[j] = arr2[j-arr1.length];
         }
         
         // Displaying Array3 Elements
