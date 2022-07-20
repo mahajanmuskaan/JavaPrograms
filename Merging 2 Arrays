@@ -14,8 +14,7 @@ public class MergingTwoArraysElements {
         }
         
         // Displaying Array1 Elements
-        System.out.println("Array1 Elements: ");
-        System.out.println(Arrays.toString(arr1));
+        System.out.println("Array1 Elements: "+Arrays.toString(arr1));
         
         //Adding elements in array2
         for(int i=0;i<b;i++){
@@ -23,8 +22,7 @@ public class MergingTwoArraysElements {
         }
         
         // Displaying Array2 Elements
-        System.out.println("Array2 Elements: ");
-        System.out.println(Arrays.toString(arr2));
+        System.out.println("Array2 Elements: " +Arrays.toString(arr2));
         
         // Using Loop-- Adding array1 elements in array3
         for(int j=0;j<arr1.length;j++){
@@ -37,8 +35,7 @@ public class MergingTwoArraysElements {
         }
         
         // Displaying Array3 Elements
-        System.out.println("Array3 Elements: ");
-        System.out.println(Arrays.toString(arr3));
+        System.out.println("Array3 Elements: "+Arrays.toString(arr3));
         
     }
 }
