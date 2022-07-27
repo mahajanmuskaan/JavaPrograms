@@ -25,20 +25,28 @@ public class Merge2SortedArrays {
         while(i<a && j<b){
             if(arr1[i]<arr2[j]){
                 merge[k]=arr1[i];
-                merge[k++] = arr1[i++];
+                //merge[k++] = arr1[i++];
+                k++;
+                i++;
             }
             else{
                 merge[k]=arr2[j];
-                merge[k++] = arr2[j++];
+                //merge[k++] = arr2[j++];
+                k++;
+                j++;
             }
         }
         while(i<a){
             merge[k]=arr1[i];
-            merge[k++] = arr1[i++];
+            //merge[k++] = arr1[i++];
+                k++;
+                i++;
         }
         while(j<b){
             merge[k]=arr2[j];
-            merge[k++] = arr2[j++];
+            //merge[k++] = arr2[j++];
+                k++;
+                j++;
         }
         System.out.println(Arrays.toString(merge));
     }
