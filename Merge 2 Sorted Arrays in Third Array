@@ -1,0 +1,45 @@
+import java.util.*;
+public class Merge2SortedArrays {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int a  = sc.nextInt();
+        int b = sc.nextInt();
+        int arr1[] = new int[a];
+        int arr2[] = new int[b];
+        int merge[] = new int[a+b];
+        
+        for(int i=0;i<a;i++){
+            arr1[i] = sc.nextInt();
+        }
+        
+        System.out.println(Arrays.toString(arr1));
+        
+        for(int i=0;i<b;i++){
+            arr2[i] = sc.nextInt();
+        }
+        
+        System.out.println(Arrays.toString(arr2));
+        
+        int i=0,j=0,k=0;
+        
+        while(i<a && j<b){
+            if(arr1[i]<arr2[j]){
+                merge[k]=arr1[i];
+                merge[k++] = arr1[i++];
+            }
+            else{
+                merge[k]=arr2[j];
+                merge[k++] = arr2[j++];
+            }
+        }
+        while(i<a){
+            merge[k]=arr1[i];
+            merge[k++] = arr1[i++];
+        }
+        while(j<b){
+            merge[k]=arr2[j];
+            merge[k++] = arr2[j++];
+        }
+        System.out.println(Arrays.toString(merge));
+    }
+}
