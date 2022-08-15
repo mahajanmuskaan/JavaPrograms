@@ -1,0 +1,80 @@
+package myDSAjourney;
+
+import java.util.Arrays;
+
+public class MergeSort {
+	public static void finalmerge(int arr[],int start,int end) {
+		//Finding mid of array
+		int mid = start+(end-start)/2; 
+		
+		//Finding lengths of 2 separated arrays
+		int len1 = mid-start+1;
+		int len2 = end-mid;
+		
+		//Creating 2 new arrays
+		int a1[] = new int[len1];
+		int a2[]= new int[len2];
+		
+		//Copying left sorted array into newly created array1
+		for(int i=0;i<len1;i++) {
+			a1[i] = arr[start+i];
+		}
+		
+		//Copying right sorted array into newly created array2
+		for(int j=0;j<len2;j++) {
+			a2[j] = arr[mid+1+j];
+		}
+		
+		//IMPORTANT TASK---- Merging 2 sorted arrays(a1,a2)
+		int i=0,j=0,k=start;
+		while(i<len1 && j<len2) {
+			if(a1[i]<a2[j]) {
+				arr[k]= a1[i];
+				i++;
+				k++;
+			}
+			else {
+				arr[k]= a2[j];
+				j++;
+				k++;
+			}
+		}
+		while(i<len1) {
+				arr[k]= a1[i];
+				i++;
+				k++;
+		}
+		while(j<len2) {
+				arr[k]= a2[j];
+				j++;
+				k++;
+		}
+		
+	}
+    public static void mergesort(int arr[], int n , int start, int end) {
+		if(start<end){
+            int mid = start+(end-start)/2;
+            mergesort(arr,n,start,mid);
+            mergesort(arr,n,mid+1,end);
+            finalmerge(arr,start,end);   
+        }
+	}
+
+	public static void mergeSort(int[] input){
+		// Write your code here
+        int n = input.length;
+        int start = 0, end = n-1;
+        mergesort(input,n,start,end);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[] = {38,43,3,10,82,9};
+		System.out.println(Arrays.toString(arr));
+		mergeSort(arr);
+		System.out.println(Arrays.toString(arr));
+
+	}
+
+}
