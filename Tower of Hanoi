@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class TowerOfHanoi {
+	public static int towerOfHanoi(int n , int A, int B, int C) {
+		if(n==0) {
+			return 0;
+		}
+		int count=1;
+		count += towerOfHanoi(n-1,A,C,B);
+		System.out.println("move disk "+n+" from rod "+A+ " to "+B);
+		count += towerOfHanoi(n-1,C,B,A);
+		return count;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc  = new Scanner(System.in);
+		int n =  sc.nextInt();
+		int A =  sc.nextInt();
+		int B =  sc.nextInt();
+		int C =  sc.nextInt();
+		int steps = towerOfHanoi(n,A,B,C);
+		System.out.println("No. of Steps : "+steps);
+
+	}
+
+}
