@@ -1,0 +1,46 @@
+import java.util.*;
+public class CompareTwoArraysElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr1[] = {12,171,34,10,90};
+        int arr2[] = {187,290,12,110,829};
+        int arr3[] = arr1;
+        int arr4[] = {187,290,12,110,829};
+
+        // Using '==' Operator -> It will compare only reference not the value or content.
+        
+        if(arr1==arr3){
+            System.out.println("arr1 and arr3 are same!!");
+        }
+        else{
+            System.out.println("arr1 and arr3 are not same!!");
+        }
+        if(arr2==arr4){
+            System.out.println("arr2 and arr4 are same!!");
+        }
+        else{
+            System.out.println("arr2 and arr4 are not same!!");
+        }
+        
+        // Using equals() method- The equals() method of the Arrays class compare arrays based on their content or values. The Arrays.equals() method return true if the two specified arrays are equal with each other.
+        
+        if(Arrays.equals(arr1,arr3)){
+            System.out.println("arr1 and arr3 are same!!");
+        }
+        else{
+            System.out.println("arr1 and arr3 are not same!!");
+        }
+        if(Arrays.equals(arr2,arr4)){
+            System.out.println("arr2 and arr4 are same!!");
+        }
+        else{
+            System.out.println("arr2 and arr4 are not same!!");
+        }
+        if(Arrays.equals(arr1,arr2)){
+            System.out.println("arr1 and arr2 are same!!");
+        }
+        else{
+            System.out.println("arr1 and arr2 are not same!!");
+        }
+    }
+}

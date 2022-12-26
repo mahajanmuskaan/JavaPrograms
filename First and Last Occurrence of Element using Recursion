@@ -1,0 +1,65 @@
+package myDSAjourney;
+
+public class FirstLastOccurrence {
+	public static int FirstIndex(int arr[], int x , int start , int end) {
+		
+		if(start>end) {
+			return -1 ;
+		}
+		int mid = start+(end-start)/2;
+		if(arr[mid]==x) {
+			
+			int temp1 = mid ; 
+			int temp2 = FirstIndex(arr,x,start,mid-1);
+			if(temp2 == -1) return temp1 ; 
+			return temp2 ; 
+			
+		}
+		else if(arr[mid]>x) {
+			return FirstIndex(arr,x,start,mid-1);
+		}
+		else if(arr[mid]<x) {
+			return FirstIndex(arr,x,mid+1,end);
+		}
+		return -1  ; 
+	}
+	
+	public static int lastIndex(int arr[],int x , int start, int end){
+        if(start>end){
+            return -1; 
+        }
+        
+        int mid = start+(end-start)/2;
+		if(arr[mid]==x) {
+			
+			int temp1 = mid ; 
+			int temp2 = lastIndex(arr,x,mid+1,end);
+			if(temp2 == -1) return temp1 ; 
+			return temp2 ; 
+			
+		}
+		else if(arr[mid]>x) {
+			return lastIndex(arr,x,start,mid-1);
+		}
+		else if(arr[mid]<x) {
+			return lastIndex(arr,x,mid+1,end);
+		}
+		return -1  ;
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[] = {-10 ,-5, -5 ,-5, 2,4,5,5,5,5,7,7,8,9,12,13,13,14,14,15,16,18,19,21,22,22,22,23,27};
+		int x = 22;
+		int start =0;
+		int end = arr.length-1;
+		FirstIndex(arr,x,start,end);
+		lastIndex(arr,x,start,end);
+		System.out.println("Length of Array: "+arr.length);
+		System.out.print("first Occurence is at: ");
+		System.out.println(FirstIndex(arr,x,start,end));
+		System.out.print("last Occurence is at: ");
+		System.out.println(lastIndex(arr,x,start,end));
+	}
+
+}

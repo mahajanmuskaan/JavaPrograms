@@ -1,0 +1,41 @@
+import java.util.*;
+public class MergingTwoArraysElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int arr1[] = new int[a];
+        int arr2[] = new int[b];
+        int arr3[] = new int[a+b];
+        
+        //Adding elements in array1
+        for(int i=0;i<a;i++){
+            arr1[i] = sc.nextInt();
+        }
+        
+        // Displaying Array1 Elements
+        System.out.println("Array1 Elements: "+Arrays.toString(arr1));
+        
+        //Adding elements in array2
+        for(int i=0;i<b;i++){
+            arr2[i] = sc.nextInt();
+        }
+        
+        // Displaying Array2 Elements
+        System.out.println("Array2 Elements: " +Arrays.toString(arr2));
+        
+        // Using Loop-- Adding array1 elements in array3
+        for(int j=0;j<arr1.length;j++){
+            arr3[j] = arr1[j];
+        }
+        
+        // Using Loop-- Adding array2 elements in array3
+        for(int j=arr1.length;j<arr3.length;j++){
+            arr3[j] = arr2[j-arr1.length];
+        }
+        
+        // Displaying Array3 Elements
+        System.out.println("Array3 Elements: "+Arrays.toString(arr3));
+        
+    }
+}

@@ -1,0 +1,25 @@
+import java.util.*;
+public class SumOfArrayElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =  sc.nextInt();
+        int arr[] = new int[size];
+        int sum =0;
+        System.out.println("Add elements in Array : ");
+        
+        for(int i =0;i<size;i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        System.out.println("Elements of Array are: ");
+        for(int j = 0;j<size;j++){
+            System.out.println(arr[j]);
+        }
+        
+        for(int k =0;k<size;k++){
+            sum = sum +arr[k];
+        }
+        System.out.println("Sum of Elements of Array is: "+sum);
+        
+    }
+}

@@ -1,0 +1,15 @@
+public class RecursiveFactorial {
+	public static int factnum(int n) {
+		if(n==0||n==1) {
+			return 1;
+		}
+		return n*factnum(n-1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num = 7;
+		System.out.println(factnum(num));
+	}
+
+}

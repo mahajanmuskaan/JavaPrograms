@@ -1,0 +1,58 @@
+package myDSAjourney;
+
+import java.util.Arrays;
+
+public class QuickSort {
+    
+	public static int partition(int[] arr, int s, int e){
+        int count=0;
+        int pivot = arr[s];
+        for(int i =s+1;i<=e;i++){
+            if(arr[i]<=pivot){
+                count=count+1;;
+            }
+        }
+        int pivotIndex = s+count;
+        
+        //Placing the Pivot element at its right place(i.e. S+Count)
+        arr[s] = arr[pivotIndex];
+        arr[pivotIndex] = pivot;
+        
+        // Checking if element from left side is greater than Pivot and element from right side is less than equal to Pivot
+        for(int i=s;i<=e;i++) {
+        	for(int j=e;j>=i;j--) {
+        		if(arr[i]>pivot && arr[j]<= pivot) {
+        			int num = arr[i];
+        			arr[i] = arr[j];
+        			arr[j] = num;
+        		}
+        	}
+        }
+        // return Index of Pivot element
+        return pivotIndex;
+    }
+    public static void quickSort(int[] arr, int s , int e){
+        // Base case
+        if(s>=e){
+            return ;
+        }
+        int  p = partition(arr,s,e);
+        quickSort(arr,s,p-1);
+        quickSort(arr,p+1,e);
+        
+        //System.out.println(Arrays.toString(arr));
+    }
+	
+	public static void quickSort(int[] input) {
+        int start = 0 , end = input.length-1;
+        quickSort(input,start,end);
+		
+	}
+	public static void main(String args[]) {
+		int arr[] = {6,1,5,8,0,2,3,6,6};
+		quickSort(arr);
+
+        System.out.println(Arrays.toString(arr));
+	}
+	
+}
